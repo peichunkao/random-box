@@ -3,6 +3,7 @@ import './App.css';
 import BoxArray from './BoxArray';
 import Box from './Box';
 import NameButton from './NameButton';
+import Todo from './Todo';
 
 const NUM_COLORS = 36;
 
@@ -21,7 +22,8 @@ class App extends Component {
   
   render() {
     return (
-      <div className="App">
+      <div>
+        <div className="App">
         <BoxArray>
           {randomColorBox(this.state.colors)}
         </BoxArray>
@@ -38,6 +40,10 @@ class App extends Component {
           }}
         />
         <h2>{this.state.text}</h2>
+        </div>
+        <div className='todoList'>
+          <Todo />
+        </div>
       </div>
     );
   }
