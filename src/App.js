@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import BoxArray from './BoxArray';
 import Box from './Box';
+import NameButton from './NameButton';
 
 const NUM_COLORS = 36;
 
@@ -10,7 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     const colors = randomColorArray(this.props.allColors)
-    this.state = {colors}
+    this.state = {colors, text:''}
 
     setInterval(()=>{
       const newColors = randomColorArray(this.props.allColors);
@@ -24,6 +25,19 @@ class App extends Component {
         <BoxArray>
           {randomColorBox(this.state.colors)}
         </BoxArray>
+        <NameButton/>
+        <input 
+          type='text' 
+          name='inputText'
+          value={this.state.inputText}
+          onChange={(e)=> {
+            this.setState({
+              inputText: e.target.value,
+              text: e.target.value
+            })
+          }}
+        />
+        <h2>{this.state.text}</h2>
       </div>
     );
   }
