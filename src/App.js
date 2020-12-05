@@ -24,25 +24,28 @@ class App extends Component {
     return (
       <div>
         <div className="App">
-        <BoxArray>
-          {randomColorBox(this.state.colors)}
-        </BoxArray>
-        <NameButton/>
-        <input 
-          type='text' 
-          name='inputText'
-          value={this.state.inputText}
-          onChange={(e)=> {
-            this.setState({
-              inputText: e.target.value,
-              text: e.target.value
-            })
-          }}
-        />
-        <h2>{this.state.text}</h2>
+          <BoxArray>
+            {randomColorBox(this.state.colors)}
+          </BoxArray>
         </div>
-        <div className='todoList'>
-          <Todo />
+          <div className='testFunction'>
+            <h2>Testing Functions</h2>
+            <NameButton/>
+            <input 
+              type='text' 
+              name='inputText'
+              value={this.state.inputText}
+              onChange={(e)=> {
+                this.setState({
+                  inputText: e.target.value,
+                  text: e.target.value
+                })
+              }}
+            />
+            <h2>{this.state.text}</h2>
+            <div className='todoList'>
+              <Todo />
+            </div>
         </div>
       </div>
     );

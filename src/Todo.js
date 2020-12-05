@@ -26,6 +26,7 @@ export default class Todo extends Component {
                         type='text'
                         name='inputTodo'
                         value={this.state.inputTodo}
+                        placeholder='What needs to be done?'
                         onChange={(e) => {
                             this.setState({
                                 inputTodo: e.target.value
